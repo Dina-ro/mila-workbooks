@@ -50,16 +50,23 @@ nav.top a{text-decoration:none;color:var(--ink-soft)}
 nav.top a:hover{color:var(--ink)}
 
 /* hero */
-.hero{padding-block:28px 56px}
+.hero{padding-block:28px 64px;position:relative;overflow:hidden;background:
+  radial-gradient(38% 46% at 8% 18%,rgba(139,187,211,.42),transparent 70%),
+  radial-gradient(30% 40% at 96% 88%,rgba(228,124,101,.26),transparent 70%),
+  radial-gradient(26% 34% at 55% 4%,rgba(214,167,61,.22),transparent 70%),var(--cream)}
+.hero .wrap{position:relative;z-index:1}
 .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
 .hero h1{font-size:clamp(2.1rem,5vw,3.7rem);font-weight:800}
-.hero h1 .q{display:block;color:var(--teal-d);font-weight:700;font-size:.5em;margin-bottom:.45em}
-.hero h1 em{font-style:normal;color:var(--terra-d)}
+.hero h1 .q{display:block;color:var(--teal);font-weight:700;font-size:.5em;margin-bottom:.45em}
+.hero h1 em{font-style:normal;color:var(--terra)}
 .hero p.lead{font-size:1.18em;max-width:36ch;color:var(--ink-soft);margin:20px 0 28px}
 .ctas{display:flex;flex-wrap:wrap;gap:12px}
 .meta{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 24px;font-family:var(--f-sub);font-size:.92em;color:var(--ink-soft)}
 .meta li{padding-inline-start:16px;position:relative}
-.meta li::before{content:"";position:absolute;inset-inline-start:0;top:.62em;width:7px;height:7px;border-radius:2px;background:var(--teal)}
+.meta li::before{content:"";position:absolute;inset-inline-start:0;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--teal)}
+.meta li:nth-child(2)::before{background:var(--terra)}
+.meta li:nth-child(3)::before{background:var(--mustard)}
+.meta li:nth-child(4)::before{background:var(--sky)}
 .meta b{color:var(--ink)}
 
 .hero-art{position:relative;margin:0;justify-self:center;width:100%;max-width:520px}
@@ -153,7 +160,7 @@ nav.top a:hover{color:var(--ink)}
 .about .wrap{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:48px;align-items:center}
 .about-text{grid-column:1;grid-row:1;max-width:60ch}
 .about-art{grid-column:2;grid-row:1;margin:0;position:relative;background:#FDF7EC;border:6px solid var(--paper);box-shadow:0 0 0 2px var(--line),0 18px 30px -18px rgba(62,59,55,.35);border-radius:50%;aspect-ratio:1;max-width:320px;width:100%;justify-self:center;overflow:hidden}
-.about-art img{width:100%;height:100%;object-fit:cover;object-position:35% 40%}
+.about-art img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:76%;height:auto}
 .about h2{font-size:clamp(1.7rem,3.4vw,2.4rem);margin:6px 0 14px}
 .about p{margin:0 0 14px;color:var(--ink-soft)}
 .about .sig{margin-top:22px;padding-top:18px;border-top:2px dashed var(--line)}
@@ -275,8 +282,9 @@ html.a-cursor,html.a-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http:
 
 @media (max-width:900px){
   .hero{position:relative;overflow:hidden;padding-block:40px 48px}
-  .hero::before{content:"";position:absolute;inset:0;background:url(img/hero.jpg) center 40%/cover no-repeat;opacity:.22}
-  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(var(--cream) 0%,rgba(245,240,231,.55) 35%,rgba(245,240,231,.55) 70%,var(--cream) 100%)}
+  .hero::before{content:"";position:absolute;inset:0;background:url(img/hero.jpg) center 40%/cover no-repeat;opacity:.6}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(var(--cream) 0%,rgba(245,240,231,.15) 18%,rgba(245,240,231,.15) 82%,var(--cream) 100%)}
+  .hero .wrap>div:first-child{background:rgba(250,246,238,.84);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);border-radius:22px;padding:24px 18px;box-shadow:0 10px 30px -18px rgba(62,59,55,.4)}
   .hero .wrap{position:relative;z-index:1}
   .hero-art{display:none}
   .hero h1,.hero p.lead{text-align:center;margin-inline:auto}
@@ -419,23 +427,7 @@ html.a-cursor,html.a-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http:
       <li><h3>מימי נותנת טיפ</h3><p>מימי הסנונית מופיעה לאורך הדרך עם הסבר קטן: על הגייה, על דקדוק, או על משהו שאומרים רק במדינה הזאת.</p><span class="why">ההסבר מגיע בדיוק כשצריך אותו, ובגובה העיניים.</span></li>
       <li><h3>מסמנים מה כבר יודעים</h3><p>בסוף כל יחידה יש דף ״מה למדתי?״ שהילד ממלא בעצמו, ותיבה קצרה להורים עם רעיונות להמשך בבית.</p><span class="why">הילד רואה את ההתקדמות שלו, וההורים יודעים איך לעזור.</span></li>
     </ol>
-    <div class="journey" aria-labelledby="jt">
-      <h3 id="jt" class="journey-title">המסע שבתוך החוברת</h3>
-      <p class="journey-sub">80 עמודים, שמונה יחידות ושתי תחנות חזרה. בכל תחנה הילד אוסף עוד מילים, ובסוף מקבל תעודה.</p>
-      <div class="jl" role="img" aria-label="מבנה החוברת: פתיחה, יחידות 1 עד 4, פרק חזרה, יחידות 5 עד 8, פרק חזרה ותעודת סיום">
-        <div class="arc a1"><span>חוזרים ומטמיעים</span></div>
-        <div class="arc a2"><span>חוזרים ומטמיעים</span></div>
-        <div class="line"></div>
-        <span class="n0 s"><img src="img/ic_family.png" alt=""></span><span class="n0">1</span><span class="n0">2</span><span class="n0">3</span><span class="n0">4</span><span class="n0 r"><img src="img/ic_review.png" alt=""></span><span class="n0">5</span><span class="n0">6</span><span class="n0">7</span><span class="n0">8</span><span class="n0 r"><img src="img/ic_review.png" alt=""></span><span class="n0 f"><img src="img/mimi_celebrate.png" alt=""></span>
-        <b class="lb" style="grid-column:1">פתיחה</b>
-        <b class="lb" style="grid-column:2/6">יחידות 1–4</b>
-        <b class="lb rv" style="grid-column:6">חזרה</b>
-        <b class="lb" style="grid-column:7/11">יחידות 5–8</b>
-        <b class="lb rv" style="grid-column:11">חזרה</b>
-        <b class="lb" style="grid-column:12">סיום</b>
-      </div>
-      <div class="legend"><span><i class="k u"></i>יחידה: ששת השלבים שלמעלה</span><span><i class="k r"></i>חזרה: מחברים את כל מה שנלמד</span><span><i class="k e"></i>בסוף: מילון, פתרונות ותעודה</span></div>
-    </div>
+
 
   </div>
 </section>
@@ -482,7 +474,7 @@ html.a-cursor,html.a-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http:
 </section>
 <section class="about" id="about" aria-labelledby="ah">
   <div class="wrap">
-    <figure class="about-art" aria-hidden="true"><img src="img/teacher.jpg" alt=""></figure>
+    <figure class="about-art" aria-hidden="true"><img src="img/teacher3.jpg" alt=""></figure>
     <div class="about-text">
       <div class="eyebrow">עלינו</div>
       <h2 id="ah">החוברות נולדו מתוך המזוודות שלנו.</h2>
