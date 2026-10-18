@@ -525,24 +525,27 @@ html.a-cursor,html.a-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http:
 
 <script>
 /* === כאן מחליפים לקישורים האמיתיים לאמזון === */
-const AMAZON_STORE = "https://www.amazon.es/s?k=MILA+for+Hebrew+Speakers&i=stripbooks";
-const STORE_US = "https://www.amazon.com/s?k=MILA+for+Hebrew+Speakers&i=stripbooks";
-const STORE_UK = "https://www.amazon.co.uk/s?k=MILA+for+Hebrew+Speakers&i=stripbooks";
+const SEARCH = "/s?k=Romani+Reichkind&i=stripbooks";   /* all books by the author */
+const AMAZON_STORE = "https://www.amazon.es" + SEARCH;
+const STORE_US = "https://www.amazon.com" + SEARCH;
+const STORE_UK = "https://www.amazon.co.uk" + SEARCH;
+/* product link per store: book page when the book has an ASIN, otherwise the author's books */
+const link = (dom, asin) => asin ? `https://www.${dom}/dp/${asin}` : `https://www.${dom}${SEARCH}`;
 document.querySelectorAll(".st-us").forEach(a=>a.href=STORE_US);
 document.querySelectorAll(".st-uk").forEach(a=>a.href=STORE_UK);
 document.querySelectorAll(".st-eu").forEach(a=>a.href=AMAZON_STORE);
 const WA = "https://wa.me/972547849329?text=" + encodeURIComponent("היי, אשמח לשמוע על חוברות MILA");
 const BOOKS = [
-  {id:"pt1", he:"פורטוגזית · חוברת 1", title:"PORTUGUÊS · First Words", img:"cover_pt1.jpg", pages:["pt1_a.jpg","pt1_b.jpg"],
-   desc:"החוברת הראשונה בסדרה, למי שמתחיל מאפס. שמונה יחידות על הצעדים הראשונים בבית החדש: ברכות, הכיתה, צבעים ומספרים, משפחה, אוכל והשכונה. הפורטוגזית היא של פורטוגל, כמו שמדברים בבית הספר.", url:AMAZON_STORE},
-  {id:"pt2", he:"פורטוגזית · חוברת 2", title:"PORTUGUÊS · My Day", img:"cover_pt2.jpg", pages:["pt2_a.jpg","pt2_b.jpg"],
-   desc:"ממשיכים מחוברת 1 אל היום־יום: השעה, ימי השבוע, חדר האוכל, קניות, מזג האוויר, הבית והתחביבים. החוברת נפתחת בהסבר על האלפבית הפורטוגזי ובחזרה קצרה על החוברת הראשונה. מצטרפת דמות חדשה, אינֵש, חברה לכיתה.", url:AMAZON_STORE},
-  {id:"es1", he:"ספרדית · חוברת 1", title:"ESPAÑOL · First Words", img:"cover_es1.jpg", pages:["es1_a.jpg","es1_b.jpg"],
-   desc:"ספרדית של ספרד, מהמילה הראשונה. אותן דמויות ואותו מבנה כמו בחוברת הפורטוגזית, עם תוכן שהותאם לשפה, להגייה ולחיים בספרד.", url:AMAZON_STORE},
-  {id:"en1", he:"אנגלית · חוברת 1", title:"ENGLISH · First Words", img:"cover_en1.jpg", pages:[],
-   desc:"אנגלית בריטית לילדים שמתחילים מאפס. החוברת נפתחת בפרק ABC עם כל 26 האותיות ודפי תרגול כתיבה לאותיות גדולות וקטנות. מתאימה למשפחות ישראליות בכל מקום בעולם.", url:AMAZON_STORE},
-  {id:"st1", small:true, he:"ספרון סיפורים לחוברת 1", title:"PORTUGUÊS · First Stories", img:"cover_st1.jpg", pages:[],
-   desc:"ספרון שתומך בלמידה של חוברת הפורטוגזית הראשונה, <bdi>First Words</bdi>, וכדאי לקרוא אותו לצידה. שמונה סיפורים קצרים שכתובים במילים שהילד כבר למד, כך שהוא יכול לקרוא לבד ולהצליח. כל סיפור נושא מסר חיובי ומעצים.", url:AMAZON_STORE}
+  {id:"pt1", asin:"B0HMLRJYN3", he:"פורטוגזית · חוברת 1", title:"PORTUGUÊS · First Words", img:"cover_pt1.jpg", pages:["pt1_a.jpg","pt1_b.jpg"],
+   desc:"החוברת הראשונה בסדרה, למי שמתחיל מאפס. שמונה יחידות על הצעדים הראשונים בבית החדש: ברכות, הכיתה, צבעים ומספרים, משפחה, אוכל והשכונה. הפורטוגזית היא של פורטוגל, כמו שמדברים בבית הספר."},
+  {id:"pt2", asin:"", he:"פורטוגזית · חוברת 2", title:"PORTUGUÊS · My Day", img:"cover_pt2.jpg", pages:["pt2_a.jpg","pt2_b.jpg"],
+   desc:"ממשיכים מחוברת 1 אל היום־יום: השעה, ימי השבוע, חדר האוכל, קניות, מזג האוויר, הבית והתחביבים. החוברת נפתחת בהסבר על האלפבית הפורטוגזי ובחזרה קצרה על החוברת הראשונה. מצטרפת דמות חדשה, אינֵש, חברה לכיתה."},
+  {id:"es1", asin:"", he:"ספרדית · חוברת 1", title:"ESPAÑOL · First Words", img:"cover_es1.jpg", pages:["es1_a.jpg","es1_b.jpg"],
+   desc:"ספרדית של ספרד, מהמילה הראשונה. אותן דמויות ואותו מבנה כמו בחוברת הפורטוגזית, עם תוכן שהותאם לשפה, להגייה ולחיים בספרד."},
+  {id:"en1", asin:"B0HNF6VMV2", he:"אנגלית · חוברת 1", title:"ENGLISH · First Words", img:"cover_en1.jpg", pages:[],
+   desc:"אנגלית בריטית לילדים שמתחילים מאפס. החוברת נפתחת בפרק ABC עם כל 26 האותיות ודפי תרגול כתיבה לאותיות גדולות וקטנות. מתאימה למשפחות ישראליות בכל מקום בעולם."},
+  {id:"st1", asin:"B0HMZ8266W", small:true, he:"ספרון סיפורים לחוברת 1", title:"PORTUGUÊS · First Stories", img:"cover_st1.jpg", pages:[],
+   desc:"ספרון שתומך בלמידה של חוברת הפורטוגזית הראשונה, <bdi>First Words</bdi>, וכדאי לקרוא אותו לצידה. שמונה סיפורים קצרים שכתובים במילים שהילד כבר למד, כך שהוא יכול לקרוא לבד ולהצליח. כל סיפור נושא מסר חיובי ומעצים."}
 ];
 document.documentElement.lang="he";document.documentElement.dir="rtl";
 const $=s=>document.querySelector(s);
@@ -575,8 +578,9 @@ document.querySelectorAll(".name-btn,.cover-hit").forEach(el=>el.addEventListene
       <h3 id="dlgTitle"><bdi>${b.title}</bdi></h3>
       <p class="dlg-desc">${b.desc}</p>
       <ul><li>לגילאי 6–14, בלי ידע קודם</li><li>משלוח לכל העולם דרך אמזון</li><li>${b.small?"8 סיפורים קצרים":"80 עמודי עבודה בפורמט גדול לכתיבה"}</li><li>כל מילה בשפה החדשה, בעברית ובתעתיק</li></ul>
-      <a class="btn btn-amz" href="${b.url}" target="_blank" rel="noopener">לרכישה באמזון</a>
-      <div class="stores stores-light"><a href="${STORE_US}" target="_blank" rel="noopener">ארה״ב</a><a href="${AMAZON_STORE}" target="_blank" rel="noopener">אירופה</a><a href="${STORE_UK}" target="_blank" rel="noopener">בריטניה</a></div>
+      <a class="btn btn-amz" href="${link("amazon.es",b.asin)}" target="_blank" rel="noopener">${b.asin?"לרכישה באמזון":"לחוברות באמזון"}</a>
+      ${b.asin?"":`<p class="nopages" style="margin-top:12px">החוברת עולה לאמזון בימים הקרובים. בינתיים הקישור מוביל לכל החוברות בסדרה.</p>`}
+      <div class="stores stores-light"><a href="${link("amazon.com",b.asin)}" target="_blank" rel="noopener">ארה״ב</a><a href="${link("amazon.es",b.asin)}" target="_blank" rel="noopener">אירופה</a><a href="${link("amazon.co.uk",b.asin)}" target="_blank" rel="noopener">בריטניה</a></div>
       ${pages}</div>`;
   breakSentences(dlg);
   dlg.showModal();
