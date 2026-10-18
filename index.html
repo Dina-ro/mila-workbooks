@@ -78,7 +78,7 @@ nav.top a:hover{color:var(--ink)}
 @keyframes bob{50%{transform:translateY(-8px)}}
 .hope-intro{color:var(--ink-soft);max-width:52ch;margin:16px auto 0}
 .hope-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:36px}
-.hope-card{background:var(--paper);border-radius:18px;padding:28px 30px;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px}
+.hope-card{background:var(--paper);border-radius:18px;padding:28px 30px;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;gap:12px}
 .hope-card .fear{font-family:var(--f-sub);font-weight:600;color:var(--terra-d);font-size:1em;margin:0;padding-bottom:12px;border-bottom:2px solid var(--line);width:100%}
 .hope-card .fear::before{content:"״";color:var(--terra-d);font-weight:700}
 .hope-card .fear::after{content:"״";color:var(--terra-d);font-weight:700}
@@ -88,7 +88,10 @@ nav.top a:hover{color:var(--ink)}
 .hope-close p{margin:0;font-family:var(--f-display);font-weight:700;font-size:1.2em;line-height:1.5}
 @media (max-width:700px){.hope-grid,.hope-head{grid-template-columns:1fr}.hope-head{gap:24px}.hope-mimi img{width:150px}}
 
-.stores{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.where{margin-top:18px}
+.where-q{display:block;font-family:var(--f-display);font-weight:700;font-size:1em}
+.stores{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.stores a{min-width:96px;justify-content:center}
 .stores a{display:inline-flex;align-items:center;gap:.4em;border:1.5px solid rgba(255,255,255,.5);border-radius:10px;padding:.5em .9em;text-decoration:none;font-family:var(--f-sub);font-weight:600;font-size:.92em;min-height:44px}
 .stores a:hover{background:rgba(255,255,255,.08)}
 .stores-light a{border-color:var(--line);background:var(--paper)}
@@ -96,7 +99,8 @@ nav.top a:hover{color:var(--ink)}
 
 /* numbers */
 .numbers{background:var(--paper);padding-block:64px}
-.numbers h2{font-size:clamp(1.6rem,3.4vw,2.4rem);max-width:24ch;margin-top:6px}
+.numbers .wrap>.eyebrow,.numbers h2{text-align:center}
+.numbers h2{font-size:clamp(1.6rem,3.4vw,2.4rem);max-width:24ch;margin:6px auto 0}
 .ngrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:36px}
 .n{border-top:3px solid var(--ink);padding-top:14px;min-width:0}
 .n .big{font-family:var(--f-display);font-weight:800;font-size:clamp(2.4rem,4.6vw,3.3rem);line-height:1;font-variant-numeric:tabular-nums;display:flex;align-items:baseline;gap:.25em}
@@ -109,9 +113,9 @@ nav.top a:hover{color:var(--ink)}
 
 /* shelf */
 .shelf-sec{padding-block:72px 48px;scroll-margin-top:90px}
-.shelf-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.shelf-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
 .shelf-head h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin-top:6px}
-.shelf-head p{margin:.4em 0 0;color:var(--ink-soft);max-width:46ch}
+.shelf-head p{margin:.4em auto 0;color:var(--ink-soft);max-width:46ch}
 .shelf{position:relative;margin-top:44px}
 .books{display:flex;align-items:flex-end;justify-content:center;gap:clamp(16px,2.8vw,36px);flex-wrap:wrap;position:relative;z-index:2;padding-inline:10px}
 .book{display:flex;flex-direction:column;align-items:center;gap:16px;width:clamp(150px,17vw,196px);perspective:1000px}
@@ -149,13 +153,13 @@ nav.top a:hover{color:var(--ink)}
 .about .wrap{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:48px;align-items:center}
 .about-text{grid-column:1;grid-row:1;max-width:60ch}
 .about-art{grid-column:2;grid-row:1;margin:0;position:relative;background:#FDF7EC;border:6px solid var(--paper);box-shadow:0 0 0 2px var(--line),0 18px 30px -18px rgba(62,59,55,.35);border-radius:50%;aspect-ratio:1;max-width:320px;width:100%;justify-self:center;overflow:hidden}
-.about-art img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:78%;height:auto}
+.about-art img{width:100%;height:100%;object-fit:cover;object-position:35% 40%}
 .about h2{font-size:clamp(1.7rem,3.4vw,2.4rem);margin:6px 0 14px}
 .about p{margin:0 0 14px;color:var(--ink-soft)}
 .about .sig{margin-top:22px;padding-top:18px;border-top:2px dashed var(--line)}
 .about .sig p{color:var(--ink)}
 .about .sig-name{font-family:var(--f-sub);margin:0}
-.about .sig-name b{font-family:var(--f-display);font-size:1.3em;color:var(--teal-d)}
+.about .sig-name b{font-family:var(--f-body);font-size:1em;font-weight:700;color:var(--ink)}
 @media (max-width:760px){.about .wrap{grid-template-columns:1fr}.about-art{grid-column:1;grid-row:1;max-width:200px}.about-text{grid-row:2}}
 /* teaser */
 .book.tease .tease-cover{background:linear-gradient(170deg,#fdf3e1 0%,#f7d9c7 100%);box-shadow:inset 5px 0 0 rgba(0,0,0,.08),6px 10px 20px rgba(62,59,55,.22);display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;padding:12% 8% 8%;direction:rtl}
@@ -168,45 +172,38 @@ nav.top a:hover{color:var(--ink)}
 .book.tease:hover .cover{transform:rotateY(0) translateY(-10px)}
 /* method */
 .method{padding-block:72px;background:var(--paper);scroll-margin-top:80px}
-.method-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end}
+.method-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
 .method h2{font-size:clamp(1.7rem,3.4vw,2.5rem);margin-top:6px}
-.method-head p{margin:0;color:var(--ink-soft);max-width:48ch}
+.method-head p{margin:0 auto;color:var(--ink-soft);max-width:58ch}
 .steps{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;counter-reset:s}
-.steps li{counter-increment:s;background:var(--cream);border-radius:16px;padding:22px 22px 24px;min-width:0;position:relative}
+.steps li{counter-increment:s;background:var(--cream);border-radius:16px;padding:22px 22px 24px;min-width:0;position:relative;text-align:center;display:flex;flex-direction:column;align-items:center}
 .steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--ink);color:var(--paper);font-family:var(--f-display);font-weight:700;margin-bottom:12px}
 .steps h3{font-size:1.12em;margin-bottom:6px}
 .steps p{margin:0;color:var(--ink-soft);font-size:.96em}
 .steps .why{display:block;margin-top:10px;font-size:.88em;color:var(--teal-d);font-weight:600}
 .journey{margin-top:44px;background:var(--cream);border-radius:22px;padding:clamp(22px,4vw,36px)}
-.journey-title{font-size:1.35em}
-.journey-sub{margin:6px 0 0;color:var(--ink-soft)}
-.track{list-style:none;padding:0;margin:34px 0 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));position:relative}
-.track::before{content:"";position:absolute;top:27px;inset-inline:4%;height:6px;border-radius:6px;background:repeating-linear-gradient(to left,var(--teal) 0 14px,transparent 14px 22px)}
-.st{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;position:relative;min-width:0;padding-inline:2px}
-.st .dot{width:46px;height:46px;margin-top:7px;border-radius:50%;display:grid;place-items:center;background:var(--paper);border:3px solid var(--teal);font-family:var(--f-display);font-weight:800;color:var(--teal-d);position:relative;z-index:1}
-.st .dot img{width:30px;height:30px;object-fit:contain}
-.st b{font-family:var(--f-display);font-size:.8em;line-height:1.25}
-.st small{font-size:.72em;color:var(--ink-soft);line-height:1.35}
-.st.rv .dot{width:58px;height:58px;margin-top:1px;border-radius:16px;background:#f6e7c1;border-color:var(--mustard);transform:rotate(45deg)}
-.st.rv .dot img{transform:rotate(-45deg)}
-.st.start .dot{background:var(--paper);border-color:var(--ink)}
-.st.end .dot{width:68px;height:68px;margin-top:-4px;border-color:var(--terra-d);background:#fbe3da}
-.st.end .dot img{width:52px;height:52px}
-.legend{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px;font-size:.86em;color:var(--ink-soft)}
+.journey-title{font-size:1.35em;text-align:center}
+.journey-sub{margin:6px auto 0;color:var(--ink-soft);text-align:center;max-width:56ch}
+.jl{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:auto auto auto;align-items:center;justify-items:center;row-gap:8px;margin-top:30px;position:relative}
+.jl .line{grid-row:2;grid-column:1/13;width:92%;height:4px;border-radius:4px;background:color-mix(in srgb,var(--teal) 35%,#fff)}
+.jl .n0{grid-row:2;width:clamp(22px,3.4vw,40px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:#fff;border:2px solid var(--teal);font-family:var(--f-display);font-weight:700;font-size:clamp(.62em,1.1vw,.95em);color:var(--teal-d);position:relative;z-index:1}
+.jl .n0:nth-of-type(1){grid-column:1}.jl .n0:nth-of-type(2){grid-column:2}.jl .n0:nth-of-type(3){grid-column:3}.jl .n0:nth-of-type(4){grid-column:4}.jl .n0:nth-of-type(5){grid-column:5}.jl .n0:nth-of-type(6){grid-column:6}.jl .n0:nth-of-type(7){grid-column:7}.jl .n0:nth-of-type(8){grid-column:8}.jl .n0:nth-of-type(9){grid-column:9}.jl .n0:nth-of-type(10){grid-column:10}.jl .n0:nth-of-type(11){grid-column:11}.jl .n0:nth-of-type(12){grid-column:12}
+.jl .n0 img{width:66%}
+.jl .n0.s{border-color:var(--ink)}
+.jl .n0.r{border-radius:10px;background:#f6e7c1;border-color:var(--mustard);width:clamp(28px,4.2vw,48px)}
+.jl .n0.f{width:clamp(32px,5vw,56px);border-color:var(--terra-d);background:#fbe3da}
+.jl .n0.f img{width:86%}
+.jl .arc{grid-row:1;height:clamp(22px,3vw,34px);width:100%;border:2px dashed var(--mustard);border-bottom:0;border-radius:60px 60px 0 0;position:relative;align-self:end;margin-bottom:-4px}
+.jl .a1{grid-column:2/7}.jl .a2{grid-column:7/12}
+.jl .arc::after{content:"";position:absolute;bottom:-6px;right:-6px;border:5px solid transparent;border-top:8px solid var(--mustard)}
+.jl .arc span{position:absolute;top:-.8em;left:50%;transform:translateX(-50%);background:var(--cream);padding:0 6px;font-family:var(--f-sub);font-weight:600;font-size:clamp(.62em,1vw,.78em);color:#8a6a17;white-space:nowrap}
+.jl .lb{grid-row:3;font-family:var(--f-display);font-size:clamp(.62em,1vw,.82em);font-weight:700;text-align:center;line-height:1.2;color:var(--ink)}
+.jl .lb.rv{color:#8a6a17}
+.legend{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;margin-top:26px;font-size:.86em;color:var(--ink-soft)}
 .legend span{display:inline-flex;align-items:center;gap:8px}
 .k{width:14px;height:14px;border-radius:50%;border:3px solid var(--teal);display:inline-block}
 .k.r{border-radius:4px;border-color:var(--mustard);background:#f6e7c1;transform:rotate(45deg)}
 .k.e{border-color:var(--terra-d);background:#fbe3da}
-@media (max-width:900px){
-  .track{grid-template-columns:1fr;gap:4px}
-  .track::before{top:20px;bottom:20px;inset-inline:auto;inset-inline-start:30px;width:6px;height:auto;background:repeating-linear-gradient(to bottom,var(--teal) 0 14px,transparent 14px 22px)}
-  .st{flex-direction:row;flex-wrap:wrap;align-items:center;text-align:start;gap:4px 14px;min-height:62px}
-  .st .dot{margin-top:0;flex:none;margin-inline:7px}
-  .st.rv .dot{margin-inline:1px}
-  .st.end .dot{margin-inline:-4px;margin-top:0}
-  .st b{font-size:.98em}
-  .st small{flex-basis:100%;padding-inline-start:74px;margin-top:-10px;font-size:.84em}
-}
 
 /* inside */
 .inside{padding-block:72px;background:linear-gradient(var(--paper),var(--cream))}
@@ -277,6 +274,13 @@ html.a-calm *,html.a-calm *::before,html.a-calm *::after{animation:none!importan
 html.a-cursor,html.a-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M4 2l28 16-12 3-6 12z' fill='%23000' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E") 4 2,auto!important}
 
 @media (max-width:900px){
+  .hero{position:relative;overflow:hidden;padding-block:40px 48px}
+  .hero::before{content:"";position:absolute;inset:0;background:url(img/hero.jpg) center 40%/cover no-repeat;opacity:.22}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(var(--cream) 0%,rgba(245,240,231,.55) 35%,rgba(245,240,231,.55) 70%,var(--cream) 100%)}
+  .hero .wrap{position:relative;z-index:1}
+  .hero-art{display:none}
+  .hero h1,.hero p.lead{text-align:center;margin-inline:auto}
+  .hero .ctas{justify-content:center}
   .hero .wrap,.inside .wrap,.method-head{grid-template-columns:1fr}
   .ngrid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -321,7 +325,7 @@ html.a-cursor,html.a-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http:
       </div>
       <ul class="meta" aria-label="על הסדרה">
         <li><b>פורטוגזית, ספרדית ואנגלית,</b> ועוד שפות בדרך</li>
-        <li><b>חוברות עבודה וספרוני סיפורים</b> שמשלימים זה את זה</li>
+        <li><b>חוברות עבודה וסיפורים קצרים</b> שמשלימים זה את זה</li>
         <li><b>לגילאי 6–14,</b> בלי צורך בידע קודם</li>
         <li><b>משלוח לכל העולם</b> דרך אמזון</li>
       </ul>
@@ -349,7 +353,7 @@ html.a-cursor,html.a-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http:
         <cite>המחקר של <bdi>Jim Cummins</bdi>, אוניברסיטת טורונטו</cite>
       </div>
       <div class="n">
-        <div class="big">17 <small>גיל</small></div>
+        <div class="big">17</div>
         <p>עד הגיל הזה המוח עדיין קולט דקדוק של שפה חדשה כמעט כמו שפת אם. ילדים בגילאי 6–14 נמצאים בדיוק בחלון הזה.</p>
         <cite>מחקר שפורסם בכתב העת <bdi>Cognition</bdi> ב־2018, עם כמעט 670 אלף משתתפים</cite>
       </div>
@@ -418,21 +422,19 @@ html.a-cursor,html.a-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http:
     <div class="journey" aria-labelledby="jt">
       <h3 id="jt" class="journey-title">המסע שבתוך החוברת</h3>
       <p class="journey-sub">80 עמודים, שמונה יחידות ושתי תחנות חזרה. בכל תחנה הילד אוסף עוד מילים, ובסוף מקבל תעודה.</p>
-      <ol class="track">
-        <li class="st start"><span class="dot"><img src="img/ic_family.png" alt=""></span><b>יוצאים לדרך</b><small>היכרות, דף להורים ואיך קוראים את התעתיק</small></li>
-        <li class="st"><span class="dot">1</span><b>יחידה 1</b></li>
-        <li class="st"><span class="dot">2</span><b>יחידה 2</b></li>
-        <li class="st"><span class="dot">3</span><b>יחידה 3</b></li>
-        <li class="st"><span class="dot">4</span><b>יחידה 4</b></li>
-        <li class="st rv"><span class="dot"><img src="img/ic_review.png" alt=""></span><b>חזרה א׳</b><small>משחק לוח וחזרה על המילים</small></li>
-        <li class="st"><span class="dot">5</span><b>יחידה 5</b></li>
-        <li class="st"><span class="dot">6</span><b>יחידה 6</b></li>
-        <li class="st"><span class="dot">7</span><b>יחידה 7</b></li>
-        <li class="st"><span class="dot">8</span><b>יחידה 8</b></li>
-        <li class="st rv"><span class="dot"><img src="img/ic_review.png" alt=""></span><b>חזרה ב׳</b><small>חוזרים על הכול</small></li>
-        <li class="st end"><span class="dot"><img src="img/mimi_celebrate.png" alt=""></span><b>תעודת סיום</b><small>מילון, פתרונות מלאים ותעודה</small></li>
-      </ol>
-      <div class="legend"><span><i class="k u"></i>יחידה: ששת השלבים שלמעלה</span><span><i class="k r"></i>תחנת חזרה: מחזקים את מה שנלמד</span><span><i class="k e"></i>סיום: חוגגים את ההתקדמות</span></div>
+      <div class="jl" role="img" aria-label="מבנה החוברת: פתיחה, יחידות 1 עד 4, פרק חזרה, יחידות 5 עד 8, פרק חזרה ותעודת סיום">
+        <div class="arc a1"><span>חוזרים ומטמיעים</span></div>
+        <div class="arc a2"><span>חוזרים ומטמיעים</span></div>
+        <div class="line"></div>
+        <span class="n0 s"><img src="img/ic_family.png" alt=""></span><span class="n0">1</span><span class="n0">2</span><span class="n0">3</span><span class="n0">4</span><span class="n0 r"><img src="img/ic_review.png" alt=""></span><span class="n0">5</span><span class="n0">6</span><span class="n0">7</span><span class="n0">8</span><span class="n0 r"><img src="img/ic_review.png" alt=""></span><span class="n0 f"><img src="img/mimi_celebrate.png" alt=""></span>
+        <b class="lb" style="grid-column:1">פתיחה</b>
+        <b class="lb" style="grid-column:2/6">יחידות 1–4</b>
+        <b class="lb rv" style="grid-column:6">חזרה</b>
+        <b class="lb" style="grid-column:7/11">יחידות 5–8</b>
+        <b class="lb rv" style="grid-column:11">חזרה</b>
+        <b class="lb" style="grid-column:12">סיום</b>
+      </div>
+      <div class="legend"><span><i class="k u"></i>יחידה: ששת השלבים שלמעלה</span><span><i class="k r"></i>חזרה: מחברים את כל מה שנלמד</span><span><i class="k e"></i>בסוף: מילון, פתרונות ותעודה</span></div>
     </div>
 
   </div>
@@ -472,7 +474,7 @@ html.a-cursor,html.a-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http:
             <svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-3.9-.5-5.6-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6z"/></svg>
             שאלה בוואטסאפ</a>
         </div>
-        <div class="stores" aria-label="חנויות אמזון"><a class="st-us" href="#" target="_blank" rel="noopener">אמזון ארה״ב <bdi>amazon.com</bdi></a><a class="st-eu" href="#" target="_blank" rel="noopener">אמזון אירופה <bdi>amazon.es</bdi></a><a class="st-uk" href="#" target="_blank" rel="noopener">אמזון בריטניה <bdi>amazon.co.uk</bdi></a></div>
+        <div class="where"><span class="where-q">איפה אתם נמצאים?</span><div class="stores" aria-label="בחירת חנות אמזון"><a class="st-us" href="#" target="_blank" rel="noopener">ישראל</a><a class="st-us" href="#" target="_blank" rel="noopener">ארה״ב וקנדה</a><a class="st-eu" href="#" target="_blank" rel="noopener">אירופה</a><a class="st-uk" href="#" target="_blank" rel="noopener">אנגליה</a></div></div>
       </div>
       <img src="img/mimi_point.png" alt="" aria-hidden="true">
     </div>
@@ -544,7 +546,7 @@ const BOOKS = [
    desc:"ספרדית של ספרד, מהמילה הראשונה. אותן דמויות ואותו מבנה כמו בחוברת הפורטוגזית, עם תוכן שהותאם לשפה, להגייה ולחיים בספרד."},
   {id:"en1", asin:"B0HNF6VMV2", he:"אנגלית · חוברת 1", title:"ENGLISH · First Words", img:"cover_en1.jpg", pages:[],
    desc:"אנגלית בריטית לילדים שמתחילים מאפס. החוברת נפתחת בפרק ABC עם כל 26 האותיות ודפי תרגול כתיבה לאותיות גדולות וקטנות. מתאימה למשפחות ישראליות בכל מקום בעולם."},
-  {id:"st1", asin:"B0HMZ8266W", small:true, he:"ספרון סיפורים לחוברת 1", title:"PORTUGUÊS · First Stories", img:"cover_st1.jpg", pages:[],
+  {id:"st1", asin:"B0HMZ8266W", small:true, he:"סיפורים קצרים לחוברת 1", title:"PORTUGUÊS · First Stories", img:"cover_st1.jpg", pages:[],
    desc:"ספרון שתומך בלמידה של חוברת הפורטוגזית הראשונה, <bdi>First Words</bdi>, וכדאי לקרוא אותו לצידה. שמונה סיפורים קצרים שכתובים במילים שהילד כבר למד, כך שהוא יכול לקרוא לבד ולהצליח. כל סיפור נושא מסר חיובי ומעצים."}
 ];
 document.documentElement.lang="he";document.documentElement.dir="rtl";
@@ -580,7 +582,7 @@ document.querySelectorAll(".name-btn,.cover-hit").forEach(el=>el.addEventListene
       <ul><li>לגילאי 6–14, בלי ידע קודם</li><li>משלוח לכל העולם דרך אמזון</li><li>${b.small?"8 סיפורים קצרים":"80 עמודי עבודה בפורמט גדול לכתיבה"}</li><li>כל מילה בשפה החדשה, בעברית ובתעתיק</li></ul>
       <a class="btn btn-amz" href="${link("amazon.es",b.asin)}" target="_blank" rel="noopener">${b.asin?"לרכישה באמזון":"לחוברות באמזון"}</a>
       ${b.asin?"":`<p class="nopages" style="margin-top:12px">החוברת עולה לאמזון בימים הקרובים. בינתיים הקישור מוביל לכל החוברות בסדרה.</p>`}
-      <div class="stores stores-light"><a href="${link("amazon.com",b.asin)}" target="_blank" rel="noopener">ארה״ב</a><a href="${link("amazon.es",b.asin)}" target="_blank" rel="noopener">אירופה</a><a href="${link("amazon.co.uk",b.asin)}" target="_blank" rel="noopener">בריטניה</a></div>
+      <div class="where"><span class="where-q">איפה אתם נמצאים?</span><div class="stores stores-light"><a href="${link("amazon.com",b.asin)}" target="_blank" rel="noopener">ישראל</a><a href="${link("amazon.com",b.asin)}" target="_blank" rel="noopener">ארה״ב וקנדה</a><a href="${link("amazon.es",b.asin)}" target="_blank" rel="noopener">אירופה</a><a href="${link("amazon.co.uk",b.asin)}" target="_blank" rel="noopener">אנגליה</a></div></div>
       ${pages}</div>`;
   breakSentences(dlg);
   dlg.showModal();
