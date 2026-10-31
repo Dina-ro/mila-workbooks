@@ -1,6 +1,16 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>MILA · חוברות שפה לילדים</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="חוברות עבודה צבעוניות לילדים דוברי עברית בגילאי 6–14: פורטוגזית, ספרדית ואנגלית, עם הסברים בעברית.">
+<meta property="og:title" content="MILA · חוברות שפה לילדים">
+<meta property="og:description" content="שפה חדשה, צעד קטן אחרי צעד, עם הסברים בעברית.">
+<meta property="og:image" content="img/hero.jpg">
+<link rel="icon" href="img/logo.png">
+<style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800&family=Heebo:wght@400;500;600;700&family=Assistant:wght@400;600;700&display=swap">
 <style>
@@ -119,7 +129,7 @@ nav.top a:hover{color:var(--ink)}
 .n.feel .big{color:var(--sage)}
 
 /* shelf */
-.shelf-sec{padding-block:72px 48px;scroll-margin-top:90px}
+.shelf-sec{padding-block:40px 64px;background:var(--paper);scroll-margin-top:90px}
 .shelf-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
 .shelf-head h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin-top:6px}
 .shelf-head p{margin:.4em auto 0;color:var(--ink-soft);max-width:46ch}
@@ -177,6 +187,20 @@ nav.top a:hover{color:var(--ink)}
 .tease-note{font-family:var(--f-sub);font-size:.86em;text-align:center;line-height:1.4;color:var(--ink-soft)}
 .tease-note b{display:block;color:var(--ink);font-family:var(--f-display)}
 .book.tease:hover .cover{transform:rotateY(0) translateY(-10px)}
+
+/* faq */
+.faq{padding-block:64px 80px;background:var(--paper)}
+.faq .wrap{max-width:820px;text-align:center}
+.faq h2{font-size:clamp(1.7rem,3.4vw,2.4rem);margin:6px 0 28px}
+.qa-list{display:grid;gap:10px;text-align:start}
+.qa{background:var(--cream);border-radius:14px;padding:0 20px}
+.qa summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:56px;font-family:var(--f-display);font-weight:700;font-size:1.02em}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";flex:none;width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--paper);color:var(--teal-d);font-size:1.2em;transition:transform .2s}
+.qa[open] summary::after{content:"−"}
+.qa summary:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:8px}
+.qa p{margin:0;padding:0 0 18px;color:var(--ink-soft);max-width:64ch}
+.faq-cta{margin-top:28px}
 /* method */
 .method{padding-block:72px;background:var(--paper);scroll-margin-top:80px}
 .method-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
@@ -310,12 +334,14 @@ html.a-cursor,html.a-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http:
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 
+</head>
+<body>
 <a href="#main" class="skip">דילוג לתוכן</a>
 
 <header id="hdr">
   <div class="wrap">
     <img class="logo" src="img/logo.png" alt="MILA. Find your words. Find your way.">
-    <nav class="top" aria-label="ניווט ראשי"><a href="#shelf">החוברות</a><a href="#method">איך זה עובד</a><a href="#order">הזמנה</a><a href="#about">עלינו</a></nav>
+    <nav class="top" aria-label="ניווט ראשי"><a href="#shelf">החוברות</a><a href="#method">איך זה עובד</a><a href="#order">הזמנה</a><a href="#about">עלינו</a><a href="#faq">שאלות</a></nav>
     <a class="btn btn-amz btn-sm amz" href="#" target="_blank" rel="noopener">לחנות באמזון</a>
   </div>
 </header>
@@ -326,22 +352,33 @@ html.a-cursor,html.a-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http:
     <div>
       <h1><span class="q">עוברים למדינה חדשה? יוצאים למסע בעולם?</span>
         שהילדים ירגישו בבית כבר <em>מהמילה הראשונה</em>.</h1>
-      <p class="lead">MILA היא סדרת חוברות עבודה לילדים דוברי עברית בגילאי 6–14. כל חוברת מזמינה אותם להכיר שפה חדשה בקצב שלהם, צעד קטן אחרי צעד, דרך רגעים שהילדים פוגשים באמת: הבוקר הראשון בכיתה, המשחק בהפסקה והקנייה במכולת. כל ההסברים כתובים בעברית, כך שגם אתם יכולים ללוות אותם בדרך.</p>
+      <p class="lead nobr">חוברות עבודה צבעוניות לילדים דוברי עברית בגילאי 6–14.<br>שפה חדשה, צעד קטן אחרי צעד, עם הסברים בעברית.</p>
       <div class="ctas">
         <a class="btn btn-amz amz" href="#" target="_blank" rel="noopener">להזמנה באמזון</a>
         <a class="btn btn-ghost" href="#shelf">לכל החוברות</a>
       </div>
-      <ul class="meta" aria-label="על הסדרה">
-        <li><b>פורטוגזית, ספרדית ואנגלית,</b> ועוד שפות בדרך</li>
-        <li><b>חוברות עבודה וסיפורים קצרים</b> שמשלימים זה את זה</li>
-        <li><b>לגילאי 6–14,</b> בלי צורך בידע קודם</li>
-        <li><b>משלוח לכל העולם</b> דרך אמזון</li>
-      </ul>
+
     </div>
     <figure class="hero-art">
       <img src="img/hero.jpg" alt="נועה ותומאס יושבים ליד שולחן ברחוב בליסבון, עם מחברות וכרטיסיות מילים, ומדברים בשמחה">
       <img class="mimi" src="img/mimi_book.png" alt="" aria-hidden="true">
     </figure>
+  </div>
+</section>
+
+<section class="shelf-sec" id="shelf" aria-labelledby="sh">
+  <div class="wrap">
+    <div class="shelf-head">
+      <div>
+        <div class="eyebrow">המדף של MILA</div>
+        <h2 id="sh">איזו שפה מחכה לכם?</h2>
+        <p>בחרו חוברת ולחצו עליה. תוכלו לראות את הכריכה מקרוב, לקרוא מה יש בה ולהציץ בעמודים מתוכה.</p>
+      </div>
+      <a class="btn btn-amz btn-sm amz" href="#" target="_blank" rel="noopener">כל הסדרה באמזון</a>
+    </div>
+    <div class="shelf">
+      <div class="books" id="books"></div>
+    </div>
   </div>
 </section>
 
@@ -380,35 +417,21 @@ html.a-cursor,html.a-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http:
       <div class="hope-text">
         <div class="eyebrow">להורים, לפני המעבר</div>
         <h2 id="hh">אם אתם קצת חוששים, זה סימן שאכפת לכם.</h2>
-        <p class="hope-intro">כל הורה שעבר דירה למדינה אחרת מכיר את הלילות שלפני. את הרשימות האינסופיות, ואת השאלות שלא תמיד אומרים בקול. ריכזנו כאן כמה מהן. לצד כל שאלה, מה שמשפחות שכבר עברו את הדרך מספרות מהצד השני.</p>
+        <p class="hope-intro">כל הורה שעבר דירה למדינה אחרת מכיר את הלילות שלפני – את הרשימות האינסופיות ואת השאלות שלא תמיד אומרים בקול. ריכזנו כאן כמה מהן. לצד כל שאלה – מה שמשפחות שכבר עברו את הדרך מספרות מהצד השני.</p>
       </div>
       <figure class="hope-mimi" aria-hidden="true"><img src="img/mimi_think.png" alt=""><figcaption>״גם אני הייתי פעם הסנונית החדשה בשכונה.״</figcaption></figure>
     </div>
     <div class="hope-grid">
-      <div class="hope-card"><p class="fear">מה אם הוא יישב לבד בהפסקה?</p><p class="ans">ילדים לא צריכים שפה מושלמת כדי להצטרף למשחק. מספיקות כמה מילים ואומץ קטן. את שניהם אפשר להכין מראש, בבית, בלי לחץ.</p></div>
-      <div class="hope-card"><p class="fear">מה אם היא לא תבין את המורה?</p><p class="ans">ביום הראשון היא לא תבין הכול, וזה בסדר. אבל היא תדע להגיד ״בוקר טוב״, לבקש עזרה ולומר איך קוראים לה. ככה מתחילים להיות חלק מהכיתה.</p></div>
+      <div class="hope-card"><p class="fear">מה אם הוא יישב לבד בהפסקה?</p><p class="ans">ילדים לא צריכים שפה מושלמת כדי להצטרף למשחק. מספיקות כמה מילים ואומץ קטן. את שניהם אפשר להכין מראש – בבית, בלי לחץ.</p></div>
+      <div class="hope-card"><p class="fear">מה אם היא לא תבין את המורה?</p><p class="ans">ביום הראשון היא לא תבין הכול – וזה בסדר. אבל היא תדע להגיד ״בוקר טוב״, לבקש עזרה ולומר איך קוראים לה. ככה מתחילים להיות חלק מהכיתה.</p></div>
       <div class="hope-card"><p class="fear">ואם אני בעצמי לא מדבר את השפה?</p><p class="ans">לא צריך לדעת את השפה כדי ללוות את הילדים. כל ההסברים בחוברת כתובים בעברית, ואפשר ללמוד יחד, ליד אותו שולחן. לפעמים דווקא הם ילמדו אתכם.</p></div>
-      <div class="hope-card"><p class="fear">אולי אנחנו מבקשים מהם יותר מדי?</p><p class="ans">ילדים גמישים יותר ממה שאנחנו זוכרים. מה שהם צריכים הוא ביטחון שמישהו לצידם. צעד קטן בכל יום, ועוד הצלחה קטנה, עושים את ההבדל.</p></div>
+      <div class="hope-card"><p class="fear">אולי אנחנו מבקשים מהם יותר מדי?</p><p class="ans">ילדים גמישים יותר ממה שאנחנו זוכרים. מה שהם צריכים הוא ביטחון שמישהו לצידם. צעד קטן בכל יום ועוד הצלחה קטנה – זה מה שעושה את ההבדל.</p></div>
     </div>
     <div class="hope-close"><img src="img/mimi_neutral.png" alt="" aria-hidden="true"><p>בית חדש לא נבנה ביום אחד. הוא נבנה מילה אחר מילה, ואתם לא לבד בדרך.</p></div>
   </div>
 </section>
 
-<section class="shelf-sec" id="shelf" aria-labelledby="sh">
-  <div class="wrap">
-    <div class="shelf-head">
-      <div>
-        <div class="eyebrow">המדף של MILA</div>
-        <h2 id="sh">איזו שפה מחכה לכם?</h2>
-        <p>בחרו חוברת ולחצו עליה. תוכלו לראות את הכריכה מקרוב, לקרוא מה יש בה ולהציץ בעמודים מתוכה.</p>
-      </div>
-      <a class="btn btn-amz btn-sm amz" href="#" target="_blank" rel="noopener">כל הסדרה באמזון</a>
-    </div>
-    <div class="shelf">
-      <div class="books" id="books"></div>
-    </div>
-  </div>
-</section>
+
 
 <section class="method" id="method" aria-labelledby="mh">
   <div class="wrap">
@@ -417,15 +440,15 @@ html.a-cursor,html.a-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http:
         <div class="eyebrow">איך בנויה כל חוברת?</div>
         <h2 id="mh">לומדים כמו שילדים באמת לומדים שפה.</h2>
       </div>
-      <p>ילדים לא לומדים שפה מרשימת מילים. הם שומעים משפט במקום מוכר, מנסים להגיד אותו, טועים, מצליחים, ומשתמשים בו שוב למחרת. לכן כל יחידה בחוברת עוברת את אותו מסלול קצר. כל שלב נשען על הקודם, והילד יודע תמיד מה מחכה לו.</p>
+      <p>ילדים לא לומדים שפה מרשימת מילים. הם שומעים משפט במקום מוכר, מנסים להגיד אותו, טועים, מצליחים ומשתמשים בו שוב למחרת. לכן כל יחידה בחוברת עוברת את אותו מסלול קצר. כל שלב נשען על הקודם והילד יודע תמיד מה מחכה לו.</p>
     </div>
     <ol class="steps">
       <li><h3>נכנסים לסיטואציה</h3><p>כל יחידה נפתחת באיור של רגע מוכר מהחיים: הבוקר הראשון בכיתה, ההפסקה בחצר, ארוחת הצהריים.</p><span class="why">כך המילים נקשרות למקום ולתחושה, ולא רק לדף.</span></li>
       <li><h3>פוגשים מעט מילים</h3><p>בין שש לעשר מילים חדשות. לכל מילה יש תמונה, תרגום לעברית ותעתיק עברי שמסמן איפה ההטעמה.</p><span class="why">מעט מילים בכל פעם נקלטות טוב יותר מרשימה ארוכה.</span></li>
       <li><h3>שומעים אותן בשיחה</h3><p>קומיקס קצר עם נועה ותומאס מראה איך המילים החדשות נשמעות יחד, בשיחה אמיתית בין ילדים.</p><span class="why">ילדים לומדים משפטים שלמים, לא רק מילים בודדות.</span></li>
-      <li><h3>מתרגלים בשלוש דרכים</h3><p>קוראים, כותבים בעיפרון ואומרים בקול. כל תרגיל מסומן ברמת קושי, מהקל אל המאתגר.</p><span class="why">כל ילד מתקדם בקצב שלו, ומצליח כבר בתרגיל הראשון.</span></li>
-      <li><h3>מימי נותנת טיפ</h3><p>מימי הסנונית מופיעה לאורך הדרך עם הסבר קטן: על הגייה, על דקדוק, או על משהו שאומרים רק במדינה הזאת.</p><span class="why">ההסבר מגיע בדיוק כשצריך אותו, ובגובה העיניים.</span></li>
-      <li><h3>מסמנים מה כבר יודעים</h3><p>בסוף כל יחידה יש דף ״מה למדתי?״ שהילד ממלא בעצמו, ותיבה קצרה להורים עם רעיונות להמשך בבית.</p><span class="why">הילד רואה את ההתקדמות שלו, וההורים יודעים איך לעזור.</span></li>
+      <li><h3>מתרגלים בשלוש דרכים</h3><p>קוראים, כותבים בעיפרון ואומרים בקול. כל תרגיל מסומן ברמת קושי, מהקל אל המאתגר.</p><span class="why">כל ילד מתקדם בקצב שלו ומצליח כבר בתרגיל הראשון.</span></li>
+      <li><h3>מימי נותנת טיפ</h3><p>מימי הסנונית מופיעה לאורך הדרך עם הסבר קטן: על הגייה, על דקדוק או על משהו שאומרים רק במדינה הזאת.</p><span class="why">ההסבר מגיע בדיוק כשצריך אותו – ובגובה העיניים.</span></li>
+      <li><h3>מסמנים מה כבר יודעים</h3><p>בסוף כל יחידה יש דף ״מה למדתי?״ שהילד ממלא בעצמו, ותיבה קצרה להורים עם רעיונות להמשך בבית.</p><span class="why">הילד רואה את ההתקדמות שלו וההורים יודעים איך לעזור.</span></li>
     </ol>
 
 
@@ -440,7 +463,7 @@ html.a-cursor,html.a-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http:
       <ul class="feats">
         <li><img src="img/ic_vocabulary.png" alt=""><div><b>מילים מהחיים עצמם</b><span>בית ספר, משפחה, אוכל ושכונה. כל מילה מופיעה בשפה החדשה, בעברית ובתעתיק עברי.</span></div></li>
         <li><img src="img/ic_writing.png" alt=""><div><b>מקום לכתוב באמת</b><span>פורמט גדול, שורות רחבות ודפים מרווחים. נוח לכתוב בעיפרון, בלי עומס על העין.</span></div></li>
-        <li><img src="img/ic_speaking.png" alt=""><div><b>משפטים שאפשר להגיד כבר מחר</b><span>שיחות קצרות מהיום־יום, שמתאימות לכיתה, לחצר ולמכולת.</span></div></li>
+        <li><img src="img/ic_speaking.png" alt=""><div><b>משפטים שאפשר להגיד כבר מחר</b><span>שיחות קצרות מהיום־יום שמתאימות לכיתה, לחצר ולמכולת.</span></div></li>
         <li><img src="img/ic_family.png" alt=""><div><b>לכל המשפחה</b><span>הסברים להורים בעברית, מילון בסוף החוברת ופתרונות מלאים לכל התרגילים.</span></div></li>
       </ul>
     </div>
@@ -457,9 +480,9 @@ html.a-cursor,html.a-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http:
       <div>
         <h2>המילה הראשונה מחכה.</h2>
         <p class="order-lead">יש רגע שכל ילד וכל ילדה במדינה חדשה מכירים. מסביב מדברים, צוחקים ושואלים, והם לא מבינים מילה. ברגע הזה מרגישים זרים.</p>
-        <p>מילה מוכרת אחת משנה את הרגע הזה. כשהילדה מבינה ״בוקר טוב״ ויודעת לענות, כשהילד מצליח לשאול ולקבל תשובה, משהו בהם נרגע. הזרות מתחלפת בסקרנות, והחשש בתחושה של ״אני מסוגל״, ״אני מסוגלת״. כל מילה שהם מביאים איתם מהבית היא עוד צעד של ביטחון.</p>
-        <p>ובינינו, גם אנחנו ההורים מכירים את הרגע הזה. מול הפקידה בעירייה, בשיחה עם המורה או מול תפריט בבית קפה. אז אם תמצאו את עצמכם לומדים מהחוברת יחד איתם, זה בדיוק המקום.</p>
-        <p>החוברות נשלחות לכל העולם דרך אמזון. יש לכם שאלה, למשל איזו חוברת מתאימה לגיל או לרמה של הילד? כתבו לי בוואטסאפ, ואשמח לעזור.</p>
+        <p>מילה מוכרת אחת משנה את הרגע הזה. כשהילדה מבינה ״בוקר טוב״ ויודעת לענות, כשהילד מצליח לשאול ולקבל תשובה, משהו בהם נרגע. הזרות מתחלפת בסקרנות, והחשש – בתחושה של ״אני מסוגל״ או ״אני מסוגלת״. כל מילה שהם מביאים איתם מהבית היא עוד צעד של ביטחון.</p>
+        <p>ובינינו, גם אנחנו, ההורים, מכירים את הרגע הזה – מול הפקידה בעירייה, בשיחה עם המורה או מול תפריט בבית קפה. אז אם תמצאו את עצמכם לומדים מהחוברת יחד איתם, זה בדיוק המקום.</p>
+        <p>החוברות נשלחות לכל העולם דרך אמזון. יש לכם שאלה – למשל, איזו חוברת מתאימה לגיל או לרמה של הילד? כתבו לי בוואטסאפ ואשמח לעזור.</p>
         <div class="ctas" style="margin-top:22px">
           <a class="btn btn-amz amz" href="#" target="_blank" rel="noopener">להזמנה בחנות באמזון</a>
           <a class="btn btn-ghost wa-link" href="#" target="_blank" rel="noopener">
@@ -478,14 +501,22 @@ html.a-cursor,html.a-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http:
     <div class="about-text">
       <div class="eyebrow">עלינו</div>
       <h2 id="ah">החוברות נולדו מתוך המזוודות שלנו.</h2>
-      <p>כשעברנו עם הילדים שלנו לפורטוגל, חיפשתי חוברת אחת פשוטה. משהו שילמד אותם את המילים הראשונות, בעברית שהם מבינים, עם תרגילים שאפשר לעשות ליד שולחן המטבח. לא מצאתי.</p>
-      <p>ואז התחלתי לשמוע את אותו הסיפור מחברות. אחת עברה לספרד, אחרת לאנגליה, ומשפחה אחרת יצאה לשנה של מסע בעולם. כולן ארזו במזוודה ספרים וחוברות בעברית, כדי לשמור על השפה של הבית. אבל לשפה החדשה, זו שהילדים פוגשים כבר ביום הראשון, לא היה מה לארוז.</p>
-      <p>כך נולדה MILA. חוברות שכתובות בעברית ומלמדות את השפה של המקום החדש, עם הרבה סבלנות, צבע ורגעים מהחיים.</p>
+      <p>כשעברנו עם הילדים שלנו לפורטוגל, חיפשתי חוברת אחת פשוטה – משהו שילמד אותם את המילים הראשונות, בעברית שהם מבינים, עם תרגילים שאפשר לעשות ליד שולחן המטבח. לא מצאתי.</p>
+      <p>ואז התחלתי לשמוע את אותו הסיפור מחברות. אחת עברה לספרד, אחרת לאנגליה ומשפחה אחרת יצאה לשנה של מסע בעולם. כולן ארזו במזוודה ספרים וחוברות בעברית כדי לשמור על השפה של הבית. אבל לשפה החדשה – זו שהילדים פוגשים כבר ביום הראשון – לא היה מה לארוז.</p>
+      <p>כך נולדה MILA – חוברות שכתובות בעברית ומלמדות את השפה של המקום החדש, עם הרבה סבלנות, צבע ורגעים מהחיים.</p>
       <div class="sig">
         <p>מקווה שהחוברות ילוו אתכם בדרך כמו שהן מלוות אותנו. ואם יש לכם שאלה, סיפור מהמעבר או סתם רצון להגיד שלום, אני כאן בוואטסאפ ואשמח לשמוע.</p>
         <p class="sig-name"><b>דינה</b></p>
       </div>
     </div>
+  </div>
+</section>
+<section class="faq" id="faq" aria-labelledby="fh">
+  <div class="wrap">
+    <div class="eyebrow">שאלות נפוצות</div>
+    <h2 id="fh">יש לכם שאלה?</h2>
+    <div class="qa-list"><details class="qa"><summary>לאיזה גיל מתאימות החוברות?</summary><p>לילדים ולילדות בגילאי 6–14. ילדים צעירים יעבדו עם קצת יותר ליווי של הורה. ילדים גדולים יכולים לעבוד גם לבד.</p></details><details class="qa"><summary>צריך לדעת משהו בשפה לפני שמתחילים?</summary><p>לא. החוברת הראשונה בכל שפה מתחילה מהמילה הראשונה ולא מניחה שום ידע קודם.</p></details><details class="qa"><summary>אני לא מדבר/ת את השפה. אוכל לעזור לילד?</summary><p>כן. כל ההסברים וההוראות כתובים בעברית ולכל מילה יש תרגום ותעתיק עברי. בסוף החוברת יש מילון ופתרונות מלאים, כך שאפשר לבדוק יחד.</p></details><details class="qa"><summary>באיזו שפה בדיוק מדובר?</summary><p>הפורטוגזית היא של פורטוגל, הספרדית היא של ספרד והאנגלית היא אנגלית בריטית – בדיוק כמו שהילדים ישמעו בבית הספר.</p></details><details class="qa"><summary>יש הקלטות או אודיו?</summary><p>לא. החוברות בנויות לעבודה בעיפרון ולתעתיק העברי יש סימון של ההברה המודגשת, כדי שיהיה קל להגות נכון גם בלי הקלטה.</p></details><details class="qa"><summary>באיזה סדר כדאי לעבוד?</summary><p>מתחילים בחוברת 1 של השפה, <bdi>First Words</bdi>. חוברת 2 ממשיכה ממנה. ספרון הסיפורים הקצרים מלווה את חוברת 1, וכדאי לקרוא אותו במקביל או אחריה.</p></details><details class="qa"><summary>איך מזמינים, ולאן אפשר לשלוח?</summary><p>דרך אמזון, עם משלוח לכל העולם. בישראל, בארה״ב ובקנדה מזמינים מאמזון ארה״ב. באירופה מאמזון אירופה ובאנגליה מאמזון אנגליה.</p></details><details class="qa"><summary>יש לי שאלה שלא מופיעה כאן</summary><p>כתבו לי בוואטסאפ. אשמח לעזור לבחור את החוברת המתאימה.</p></details></div>
+    <div class="faq-cta"><a class="btn btn-ghost wa-link" href="#" target="_blank" rel="noopener">שאלה בוואטסאפ</a></div>
   </div>
 </section>
 </main>
@@ -531,15 +562,15 @@ document.querySelectorAll(".st-eu").forEach(a=>a.href=AMAZON_STORE);
 const WA = "https://wa.me/972547849329?text=" + encodeURIComponent("היי, אשמח לשמוע על חוברות MILA");
 const BOOKS = [
   {id:"pt1", asin:"B0HMLRJYN3", he:"פורטוגזית · חוברת 1", title:"PORTUGUÊS · First Words", img:"cover_pt1.jpg", pages:["pt1_a.jpg","pt1_b.jpg"],
-   desc:"החוברת הראשונה בסדרה, למי שמתחיל מאפס. שמונה יחידות על הצעדים הראשונים בבית החדש: ברכות, הכיתה, צבעים ומספרים, משפחה, אוכל והשכונה. הפורטוגזית היא של פורטוגל, כמו שמדברים בבית הספר."},
+   desc:"החוברת הראשונה בסדרה – למי שמתחיל מאפס. שמונה יחידות על הצעדים הראשונים בבית החדש: ברכות, הכיתה, צבעים ומספרים, משפחה, אוכל והשכונה. הפורטוגזית היא של פורטוגל, כמו שמדברים בבית הספר."},
   {id:"pt2", asin:"", he:"פורטוגזית · חוברת 2", title:"PORTUGUÊS · My Day", img:"cover_pt2.jpg", pages:["pt2_a.jpg","pt2_b.jpg"],
-   desc:"ממשיכים מחוברת 1 אל היום־יום: השעה, ימי השבוע, חדר האוכל, קניות, מזג האוויר, הבית והתחביבים. החוברת נפתחת בהסבר על האלפבית הפורטוגזי ובחזרה קצרה על החוברת הראשונה. מצטרפת דמות חדשה, אינֵש, חברה לכיתה."},
+   desc:"ממשיכים מחוברת 1 אל היום־יום: השעה, ימי השבוע, חדר האוכל, קניות, מזג האוויר, הבית והתחביבים. החוברת נפתחת בהסבר על האלפבית הפורטוגזי ובחזרה קצרה על החוברת הראשונה. מצטרפת גם דמות חדשה: אינֵש, חברה לכיתה."},
   {id:"es1", asin:"", he:"ספרדית · חוברת 1", title:"ESPAÑOL · First Words", img:"cover_es1.jpg", pages:["es1_a.jpg","es1_b.jpg"],
-   desc:"ספרדית של ספרד, מהמילה הראשונה. אותן דמויות ואותו מבנה כמו בחוברת הפורטוגזית, עם תוכן שהותאם לשפה, להגייה ולחיים בספרד."},
+   desc:"ספרדית של ספרד – מהמילה הראשונה. אותן דמויות ואותו מבנה כמו בחוברת הפורטוגזית, עם תוכן שהותאם לשפה, להגייה ולחיים בספרד."},
   {id:"en1", asin:"B0HNF6VMV2", he:"אנגלית · חוברת 1", title:"ENGLISH · First Words", img:"cover_en1.jpg", pages:[],
    desc:"אנגלית בריטית לילדים שמתחילים מאפס. החוברת נפתחת בפרק ABC עם כל 26 האותיות ודפי תרגול כתיבה לאותיות גדולות וקטנות. מתאימה למשפחות ישראליות בכל מקום בעולם."},
   {id:"st1", asin:"B0HMZ8266W", small:true, he:"סיפורים קצרים לחוברת 1", title:"PORTUGUÊS · First Stories", img:"cover_st1.jpg", pages:[],
-   desc:"ספרון שתומך בלמידה של חוברת הפורטוגזית הראשונה, <bdi>First Words</bdi>, וכדאי לקרוא אותו לצידה. שמונה סיפורים קצרים שכתובים במילים שהילד כבר למד, כך שהוא יכול לקרוא לבד ולהצליח. כל סיפור נושא מסר חיובי ומעצים."}
+   desc:"ספרון שתומך בלמידה של חוברת הפורטוגזית הראשונה, <bdi>First Words</bdi> – וכדאי לקרוא אותו לצידה. שמונה סיפורים קצרים שכתובים במילים שהילד כבר למד, כך שהוא יכול לקרוא לבד ולהצליח. כל סיפור נושא מסר חיובי ומעצים."}
 ];
 document.documentElement.lang="he";document.documentElement.dir="rtl";
 const $=s=>document.querySelector(s);
@@ -585,7 +616,7 @@ dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
 dlg.addEventListener("close",()=>{lastBtn&&lastBtn.focus()});
 
 function breakSentences(root){
-  root.querySelectorAll(".lead,.order-lead,.journey-sub,.method-head p,.steps p,.steps .why,.n p,.order-card p,.hope-intro,.about p:not(.sig),.hope-card .ans,.hope-close p,.feats span,.dlg-desc,.shelf-head p").forEach(el=>{
+  root.querySelectorAll("main p:not(.nobr), .feats span, .steps .why, .dlg p, .dlg li").forEach(el=>{
     if(el.dataset.br)return; el.dataset.br=1;
     el.innerHTML=el.innerHTML.replace(/([.?!])\s+(?=[^\s<])/g,"$1<br>");
   });
@@ -618,4 +649,5 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!panel.hidden)close
 apply();
 </script>
 
-</body></html>
+</body>
+</html>
